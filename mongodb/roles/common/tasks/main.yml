@@ -11,13 +11,13 @@
 #- name: Install the epel-release package
 #  yum: name=epel-release state=present
 
-- name: Create the repository for mongodb
-  copy: src=mongodb-org-3.2.repo dest=/etc/yum.repos.d/mongodb-org-3.2.repo
+#- name: Create the repository for mongodb
+ # copy: src=mongodb-org-3.2.repo dest=/etc/yum.repos.d/mongodb-org-3.2.repo
 
 - name: Install the mongodb package
   yum: name={{ item }} state=present
   with_items:
-#   - python-pip
+   - python-pip
    - policycoreutils-python
    - mongodb-org-mongos-{{mongodb_version}}
    - mongodb-org-shell-{{mongodb_version}}
